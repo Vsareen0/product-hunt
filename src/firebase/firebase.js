@@ -10,6 +10,32 @@ class Firebase {
     this.auth = app.auth();
     this.db = app.firestore();
   }
+
+  // register
+  async register(name, email, password) {
+    const newUser = await this.auth.createUserWithEmailAndPassword(
+      email,
+      password
+    );
+    return newUser.user.updateProfile({
+      displayName: name,
+    });
+  }
+
+  // login
+  login(email, password) {
+    return this.auth.signInWithEmailAndPassword(email, password);
+  }
+
+  // logout
+  logout() {
+    return this.auth.signOut();
+  }
+
+  // reset password
+  resetPassword(email) {
+    return this.auth.sendPasswordResetEmail(email);
+  }
 }
 
 const firebase = new Firebase();
