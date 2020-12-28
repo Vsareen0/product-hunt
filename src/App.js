@@ -11,21 +11,21 @@ import {
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import {
-  newspaperOutline,
+  listCircleOutline,
   searchOutline,
   personCircleOutline,
   createOutline,
   trendingUpOutline,
 } from "ionicons/icons";
-import News from "./pages/Tabs/News";
-import Trending from "./pages/Tabs/Trending";
-import Submit from "./pages/Tabs/Submit";
-import Search from "./pages/Tabs/Search";
-import Profile from "./pages/Tabs/Profile";
-import EditProfile from "./pages/Auth/EditProfile";
-import Login from "./pages/Auth/Login";
-import Signup from "./pages/Auth/Signup";
-import Forgot from "./pages/Auth/Forgot";
+import Home from "./pages/Home";
+import Trending from "./pages/Trending";
+import Submit from "./pages/Submit";
+import Search from "./pages/Search";
+import Profile from "./pages/Profile";
+import EditProfile from "./pages/EditProfile";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Forgot from "./pages/Forgot";
 import useAuth from "./hooks/useAuth";
 import UserContext from "./contexts/UserContext";
 
@@ -58,10 +58,10 @@ const App = () => {
             <IonRouterOutlet>
               <Route
                 path="/"
-                render={() => <Redirect to="/news" />}
+                render={() => <Redirect to="/home" />}
                 exact={true}
               />
-              <Route path="/news" component={News} />
+              <Route path="/home" component={Home} />
               <Route path="/trending" component={Trending} />
               <Route path="/submit" component={Submit} />
               <Route path="/search" component={Search} />
@@ -70,12 +70,12 @@ const App = () => {
               <Route path="/register" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot" component={Forgot} />
-              <Route component={() => <Redirect to="/news" />} />
+              <Route component={() => <Redirect to="/home" />} />
             </IonRouterOutlet>
             <IonTabBar slot="bottom">
-              <IonTabButton tab="news" href="/news">
-                <IonIcon icon={newspaperOutline} />
-                <IonLabel>Newsy</IonLabel>
+              <IonTabButton tab="home" href="/home">
+                <IonIcon icon={listCircleOutline} />
+                <IonLabel>Hunt</IonLabel>
               </IonTabButton>
               <IonTabButton tab="trending" href="/trending">
                 <IonIcon icon={trendingUpOutline} />

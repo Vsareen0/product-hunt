@@ -16,7 +16,7 @@ import {
 import { personCircleOutline, mailOutline } from "ionicons/icons";
 import UserContext from "../contexts/UserContext";
 import firebase from "../firebase";
-import { toast } from "../helpers/toast";
+import { toast } from "../utils/toast";
 import SmallHeader from "../components/Header/SmallHeader";
 import LargeHeader from "../components/Header/LargeHeader";
 
